@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<!--- ICS2O My first slider --->
+<!--- ICS2O My first API for random cat image --->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="My first slider" />
+    <meta name="description" content="My first API for random cat image" />
     <meta name="keywords" content="mths, ics2o" />
     <meta name="author" content="Allen li" />
     <meta name="theme-color" content="#FFFFFF" />
-    <title>My first Slider</title>
+    <title>My first API for random cat image</title>
     <link
       rel="canonical"
-      href="https://allen-li-hub.github.io/ICS2O-Unit5-01-HTML/"
+      href="https://allen-li-hub.github.io/ICS2OR-assignment6/"
     />
-    <link rel="manifest" href="/ICS2O-Unit5-01-HTML/manifest.webmanifest" />
+    <link rel="manifest" href="/ICS2OR-assignment6/manifest.webmanifest" />
     <link rel="stylesheet" href="./css/styles.css" />
     <!--- None blocking for Lighthouse report --->
     <!--- https://stackoverflow.com/questions/32759272/how-to-load-css-asynchronously --->
@@ -45,48 +45,20 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   </head>
-  <title>My first Slider</title>
+  <title>My first API for random cat image</title>
   <body>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="./js/script.js"></script>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title"
-            >Guess a random number between 1-6!</span
-          >
+          <span class="mdl-layout-title">Random Cat Image Generator, API</span>
         </div>
       </header>
-      <main class="mdl-layout__content">
+      <h4>Do you like cats?</h4>
+      <h6>If you do, refresh the page to see a new randomly generated image!</h6>
+        <div id="api-image"></div>
         <p></p>
-        <img
-          src="./img/notebook-animation.svg"
-          alt="Computer"
-          width="25%"
-          height="25%"
-        />
-        <p></p>
-        <div id="slider-value">??</div>
-        <!-- Slider with Starting Value -->
-        <!-- Note: I added and ID to this componennt, so I could reference it in code -->
-        <!-- Note: I also placed it inside "label" for accessability -->
-        <label>
-          Slider's Value
-          <input
-            id="slider"
-            class="mdl-slider mdl-js-slider"
-            type="range"
-            min="1"
-            max="6"
-            value="1"
-            tabindex="0"
-            onchange="updateSliderValue(this.value)"
-          />
-        </label>
-        <!-- basic text -->
-        <div id="answer"></div>
-        <p></p>
-      </main>
     </div>
   </body>
 </html>

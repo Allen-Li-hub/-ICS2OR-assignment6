@@ -1,7 +1,7 @@
 // Copyright (c) 2022 Allen Li All rights reserved
 //
 // Created by: Allen Li
-// Created on: Oct 2022
+// Created on: Dec 2022
 // This file contains the JS functions for index.html
 
 "use strict"
@@ -10,23 +10,27 @@
  * Check servie worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-Unit5-01-HTML/sw.js", {
-    scope: "/ICS2O-Unit5-01-HTML/",
+  navigator.serviceWorker.register("/ICS2OR-assignment6/sw.js", {
+    scope: "/ICS2OR-assignment6/",
   })
 }
 
-const randomNumber = Math.floor(Math.random() * 6) + 1
+/**
+ * Get API info.
+ */
+// code from: https://thecatapi.com/
 
-function updateSliderValue(valueFromSlider) {
-  document.getElementById("slider-value").innerHTML = valueFromSlider
+const getCat = async (URLAddress) => {
+  try {
+    const result = await fetch(URLAddress)
+    const jsonData = await result.json()
+    console.log(jsonData[0].url)
+    console.log(jsonData[0])
+    document.getElementById("api-image").innerHTML = '<img src="' + jsonData[0].url + '" alt="cat image" width= 25% height 20%>'
 
-  if (valueFromSlider == randomNumber) {
-    document.getElementById("answer").innerHTML =
-      "the answer was, " + randomNumber + "!" + " You got it! Excellent."
-  }
-
-  if (valueFromSlider != randomNumber) {
-    document.getElementById("answer").innerHTML =
-      "Sorry the answer was, " + randomNumber + "!" + " please try again."
+  } catch (err) {
+    console.log(err)
   }
 }
+
+getCat("https://api.thecatapi.com/v1/images/search")
